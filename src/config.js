@@ -1,5 +1,5 @@
 // src/config.js
-export const GAME_DURATION_MS = 60000;
+export const GAME_DURATION_MS = 30000;
 export const MAX_RETRIES = 5;
 export const BEST_SCORE_KEY = 'clayshoot.best';
 
@@ -14,7 +14,8 @@ export const TARGET_TYPES = {
 export const COMBO_TABLE = [1, 1.5, 2, 2.5, 3];
 
 export const DIFFICULTY = {
-  baseSpawnIntervalMs: 900,   // 시작 시 스폰 간격
+  baseSpawnIntervalMs: 700,   // 시작 시 스폰 간격 (30초판: 초반부터 몰입되게 조밀)
   minSpawnIntervalMs: 350,    // 가장 빨라졌을 때 하한
-  speedRampPerSec: 0.012,     // 초당 속도 배율 증가량
+  spawnRampPerSec: 30,        // 초당 스폰 간격 단축량(ms) → 약 12초에 최소 간격 도달
+  speedRampPerSec: 0.024,     // 초당 속도 배율 증가량 → 30초 시점 약 1.7배
 };

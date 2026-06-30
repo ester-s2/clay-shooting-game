@@ -4,8 +4,8 @@ import assert from 'node:assert/strict';
 import { spawnInterval, speedMultiplier } from '../src/difficulty.js';
 
 test('spawnInterval starts at base and decreases over time', () => {
-  assert.equal(spawnInterval(0), 900);
-  assert.ok(spawnInterval(10000) < 900);
+  assert.equal(spawnInterval(0), 700);
+  assert.ok(spawnInterval(10000) < 700);
 });
 
 test('spawnInterval never drops below the minimum', () => {
@@ -14,5 +14,5 @@ test('spawnInterval never drops below the minimum', () => {
 
 test('speedMultiplier starts at 1 and grows with time', () => {
   assert.equal(speedMultiplier(0), 1);
-  assert.ok(Math.abs(speedMultiplier(10000) - 1.12) < 1e-9); // 1 + 10*0.012
+  assert.ok(Math.abs(speedMultiplier(10000) - 1.24) < 1e-9); // 1 + 10*0.024
 });

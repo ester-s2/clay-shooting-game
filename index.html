@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>클레이사격 데모</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="game-root">
+    <canvas id="game-canvas"></canvas>
+
+    <div id="hud">
+      <span id="hud-time">60</span>
+      <span id="hud-score">0</span>
+      <span id="hud-combo">x1</span>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h1 id="overlay-title">클레이사격</h1>
+        <p id="overlay-final"></p>
+        <p id="overlay-best"></p>
+        <button id="btn-retry" type="button">시작하기</button>
+        <p id="retry-count"></p>
+        <!-- 웹툰 보러가기 CTA: 데모에서는 자리/문구만 (동작 없음) -->
+        <button id="btn-webtoon" type="button" class="hidden" data-stub="true">
+          웹툰 보고 기회 더 받기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/game.js"></script>
+</body>
+</html>

@@ -88,7 +88,7 @@ function tick(ts) {
   // 렌더 + HUD
   drawFrame(ctx, dims, state.targets, state.effects);
   const timeLeft = Math.max(0, (GAME_DURATION_MS - state.elapsedMs) / 1000);
-  updateHud({ time: timeLeft, score: state.score, combo: comboLabel() });
+  updateHud({ time: timeLeft, score: state.score, combo: comboLabel(), lives: state.retriesLeft });
 
   if (state.elapsedMs >= GAME_DURATION_MS) return endGame();
   requestAnimationFrame(tick);
@@ -130,5 +130,5 @@ function endGame() {
 // 부팅
 attachPointer(canvas, handlePoint);
 onRetry(startGame);
-updateHud({ time: GAME_DURATION_MS / 1000, score: 0, combo: 1 });
+updateHud({ time: GAME_DURATION_MS / 1000, score: 0, combo: 1, lives: state.retriesLeft });
 setStartMode();

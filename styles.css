@@ -6,11 +6,19 @@ html, body { height: 100%; overflow: hidden; background: #0e1320; font-family: s
 
 #hud {
   position: absolute; top: 0; left: 0; right: 0;
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 12px 16px; color: #fff; font-size: clamp(16px, 4vw, 28px);
-  font-weight: 700; text-shadow: 0 1px 3px rgba(0,0,0,.6); pointer-events: none;
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  padding: 14px 18px; color: #fff; font-size: clamp(15px, 3.8vw, 26px);
+  font-weight: 800; text-shadow: 0 1px 3px rgba(0,0,0,.6); pointer-events: none;
 }
-#hud-combo { color: #ffd34d; }
+#hud-lives { justify-self: start; }
+#hud-score { justify-self: center; font-variant-numeric: tabular-nums; }
+#hud-time  { justify-self: end; font-variant-numeric: tabular-nums; }
+
+#combo-badge {
+  position: absolute; right: 18px; bottom: 18px; pointer-events: none;
+  color: #ffd34d; font-weight: 900; font-size: clamp(24px, 8vw, 44px);
+  text-shadow: 0 1px 4px rgba(0,0,0,.6); font-variant-numeric: tabular-nums;
+}
 
 .overlay {
   position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;

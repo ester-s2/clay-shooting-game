@@ -1,9 +1,10 @@
 // src/ui.js
 const $ = (id) => document.getElementById(id);
 
-export function updateHud({ time, score, combo }) {
-  $('hud-time').textContent = String(Math.ceil(time));
+export function updateHud({ time, score, combo, lives }) {
+  $('hud-lives').textContent = `남은 기회 ${lives}회`;
   $('hud-score').textContent = String(score);
+  $('hud-time').textContent = String(Math.ceil(time));
   $('hud-combo').textContent = 'x' + combo;
 }
 
